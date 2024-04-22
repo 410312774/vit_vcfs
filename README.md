@@ -1,15 +1,10 @@
 # ViT-Shapley
 
-Shapley values are a theoretically grounded model explanation approach, but their exponential computational cost makes them difficult to use with large deep learning models. This package implements **ViT-Shapley**, an approach that makes Shapley values practical for vision transformer (ViT) models. The key idea is to learn an *amortized explainer model* that generates explanations in a single forward pass.
+This is the code repository for the article "Shapley-based Saliency Maps Improve Interpretability of Vertebral Compression Fractures Classification: Multicenter Study."
 
-The high-level workflow for using ViT-Shapley is the following:
+Here, we express our gratitude to Ian Covert, Chanwoo Kim, and Su-In Lee for their work on computing vit-shapley (https://github.com/suinleelab/vit-shapley). We made minor modifications to the code to adapt it for input from lumbar spine X-ray images.
 
-1. Obtain your initial ViT model
-2. If your model was not trained to acommodate held-out image patches, fine-tune it with random masking
-3. Train an explainer model using ViT-Shapley's custom loss function (often by fine-tuning parameters of the original ViT)
-
-Please see our paper [here](https://arxiv.org/abs/2206.05282?context=cs.LG) for more details, as well as the work that ViT-Shapley builds on ([KernelSHAP](https://arxiv.org/abs/1705.07874), [FastSHAP](https://openreview.net/forum?id=Zq2G_VTV53T)).
-
+The calculations of model accuracy, sensitivity, and specificity within the article utilized our previously developed platform, PixelMedAI(https://github.com/410312774/PixelMedAI).
 ## Installation
 
 ```bash
@@ -26,37 +21,3 @@ Commands for training and testing the models are available in the files under `s
 * scripts/training_surrogate.md
 * scripts/training_explainer.md
 * scripts/training_classifier_masked.md
-
-## Benchmarking
-
-1. Run `notebooks/2_1_benchmarking.ipynb` to obtain results.
-2. Run `notebooks/2_2_ROAR.ipynb` to run retraining-based ROAR benchmarking.
-3. Run `notebooks/3_plotting.ipynb` to plot the results.
-
-## Datasets
-
-- [ImageNette](https://github.com/fastai/imagenette)
-- [MURA](https://stanfordmlgroup.github.io/competitions/mura/)
-
-## Model weights
-Pretrained model weights for vit-base models are available [here](https://aimslab.cs.washington.edu/vitshapley/checkpoints/).
-## Demo
-You can try out ViT Shapley using Colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/suinleelab/vit-shapley/blob/master/notebooks/vit-shapley-example.ipynb)
-
-<!-- ## Download Pretrained Models
-
-Download pretrained models from [here](). -->
-
-## Citation
-
-If you use any part of this code and pretrained weights for your own purpose, please cite
-our [paper](https://arxiv.org/abs/2206.05282).
-
-## Contact
-
-- [Ian Covert](https://iancovert.com) (Paul G. Allen School of Computer Science and Engineering @ University of
-  Washington)
-- [Chanwoo Kim](https://chanwoo.kim) (Paul G. Allen School of Computer Science and Engineering @ University of
-  Washington)
-- [Su-In Lee](https://suinlee.cs.washington.edu/) (Paul G. Allen School of Computer Science and Engineering @ University
-  of Washington)
