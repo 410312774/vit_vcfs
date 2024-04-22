@@ -8,7 +8,7 @@ The calculations of model accuracy, sensitivity, and specificity within the arti
 ## Installation
 
 ```bash
-git clone https://github.com/chanwkimlab/vit-shapley.git
+git clone https://github.com/410312774/vit_vcfs.git
 cd vit-shapley
 pip install -r requirements.txt
 ```
